@@ -1,0 +1,44 @@
+diskimages:
+  - name: centos-7
+    elements:
+      - centos7
+      - vm
+      - nodepool
+  - name: fedora-21
+    elements:
+      - fedora
+      - vm
+      - nodepool
+    release: 21
+
+labels:
+  - name: centos-7
+    image: centos-7
+    min-ready: 1
+    providers:
+      - name: oslab
+  - name: fedora-21
+    image: fedora-21
+    min-ready: 1
+    providers:
+      - name: oslab
+
+providers:
+  - name: oslab
+    cloud: oslab
+    max-servers: 6
+    images:
+      - name: centos-7
+        min-ram: 8192
+        diskimage: centos-7
+        private-key: /var/lib/nodepool/.ssh/id_rsa
+        username: jenkins
+      - name: fedora-21
+        min-ram: 8192
+        diskimage: fedora-21
+        private-key: /var/lib/nodepool/.ssh/id_rsa
+        username: jenkins
+
+targets:
+  - name: jenkins01
+  - name: jenkins02
