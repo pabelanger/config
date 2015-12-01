@@ -1,0 +1,5 @@
+- project:
+    name: sandbox
+
+    jobs:
+      - gate-noop

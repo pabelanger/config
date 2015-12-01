@@ -1,0 +1,3 @@
+- job:
+    name: gate-noop
+    node: centos-7
