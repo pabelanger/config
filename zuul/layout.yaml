@@ -96,9 +96,9 @@ project-templates:
 
   - name: noop-jobs
     check:
-      - gate-noop
+      - noop
     gate:
-      - gate-noop
+      - noop
 
 
 jobs:
